@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 import Script from "next/script";
-
 
 export default function Home() {
   return (
@@ -18,9 +17,7 @@ export default function Home() {
       ></Script>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to Circadian
-        </h1>
+        <h1 className={styles.title}>Welcome to Circadian</h1>
 
         <p className={styles.description}>
           The Crypto Derived Stock Market
@@ -29,7 +26,12 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <p>
+              Provide a 24/7, unregulated, no-delay trading platform where users
+              around the world can avoid the problems of online brokerages and
+              gain greater accessibility to the stock market by using crypto to
+              become involved with market trends.
+            </p>
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
@@ -37,21 +39,21 @@ export default function Home() {
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
           <figure>
-              <model-viewer
-                style={{ width: "350px", height: "550px" }}
-                loading="eager"
-                auto-rotate-delay="1000"
-                camera-orbit="0 80deg 0"
-                interaction-prompt="none"
-                rotation-per-second="200%"
-                camera-controls
-                auto-rotate
-                environment-image="neutral"
-                disable-zoom
-                shadow-intensity="0.6"
-                src="../blockO.glb"
-              ></model-viewer>
-            </figure>
+            <model-viewer
+              style={{ width: "350px", height: "550px" }}
+              loading="eager"
+              auto-rotate-delay="1000"
+              camera-orbit="0 80deg 0"
+              interaction-prompt="none"
+              rotation-per-second="200%"
+              camera-controls
+              auto-rotate
+              environment-image="neutral"
+              disable-zoom
+              shadow-intensity="0.6"
+              src="../blockO.glb"
+            ></model-viewer>
+          </figure>
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -66,17 +68,13 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
+        <a href="/" target="_blank" rel="noopener noreferrer">
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
