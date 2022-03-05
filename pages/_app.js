@@ -5,23 +5,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'react-bootstrap/Image';
 import { timeFormat } from "d3-time-format";
 import { format } from "d3-format";
+import "../styles/Chart.modules.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <div className="main">
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <Navbar.Brand href="">
-            <Image src="public/Circadian Logo.png" width="64" height="64" className="" alt="Circadian Logo"/>
+            <Image src="./tester.png" width="100" height="64" className="" alt="Circadian Logo"/>
             </Navbar.Brand>
             Circadian
             </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/charts">Charts</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

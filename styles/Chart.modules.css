@@ -1,0 +1,15 @@
+.frame{
+    border: 1px solid #e0e3eb;
+    height: 100%;
+    width: 100%
+}
+
+.bottom{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.anchor{
+    color: #1db954;
+}

@@ -17,25 +17,23 @@ export default function Home() {
       ></Script>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Circadian</h1>
-
-        <p className={styles.description}>
-          The Crypto Derived Stock Market
-        </p>
-
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
+            <h1 className={styles.title}>Welcome to Circadian</h1>
+            <h1 className={styles.description}>
+              The Crypto Derived Stock Market
+            </h1>
             <p>
-              Provide a <b>24/7</b>, <b>unregulated</b>, <b>no-delay</b> trading platform where users
-              around the world can avoid the problems of online brokerages and
-              gain greater accessibility to the stock market by using crypto to
-              become involved with market trends.
+              Provide a <b>24/7</b>, <b>unregulated</b>, <b>no-delay</b> trading
+              platform where users around the world can avoid the problems of
+              online brokerages and gain greater accessibility to the stock
+              market by using crypto to become involved with market trends.
             </p>
           </a>
 
           <figure>
             <model-viewer
-              style={{ width: "450px", height: "550px" }}
+              style={{ width: "450px", height: "400px" }}
               loading="eager"
               auto-rotate-delay="1000"
               camera-orbit="0 80deg 0"
@@ -49,25 +47,12 @@ export default function Home() {
               src="../untitled.glb"
             ></model-viewer>
           </figure>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
         </div>
       </main>
 
       <footer className={styles.footer}>
         <a href="/" target="_blank" rel="noopener noreferrer">
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          Powered by Circadian Systems
         </a>
       </footer>
     </div>
