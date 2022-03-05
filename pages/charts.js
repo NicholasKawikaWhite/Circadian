@@ -12,29 +12,38 @@ import {
   Table,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 //import { restClient } from "@polygon.io/client-js";
 
 const apiKey = "VtcpqXV5Mv3g2HR2epTXgy095RwFe06v";
 const baseURL = "https://api.polygon.io/v2/aggs/ticker/"
 async function getStockData(ticker, tr1, tr2, sep) {
-    var finalURL = baseURL+ticker+"/range/minute/"+tr1+"/"+tr2+"?adjusted=true&sort=asc&limit=120&apiKey="+apiKey;
-    await fetch(finalURL).then(response => response.json()).then(data => console.log(data));
+    var finalURL = baseURL+ticker+"/range/1/minute/"+tr1+"/"+tr2+"?adjusted=true&sort=asc&limit=120&apiKey="+apiKey;
+    a = await fetch(finalURL);
+    json = await a.json();
+    console.log(json);
 }
 
-const finnhub = require('finnhub');
+function TickerChart({ticker, date1, date2}) {
+    return(
+        <div>
+            <h1></h1>
+        </div>
+    );
 
-const api_key = finnhub.ApiClient.instance.authentications['api_key'];
-api_key.apiKey = "c8hpqsiad3iearbtrs70"
-const finnhubClient = new finnhub.DefaultApi()
+}
 
-finnhubClient.quote("AAPL", (error, data, response) => {
-  console.log(data)
-});
+export default function chartPicture(){
 
-export default class chartPicture extends React.Component {
-  render() {
+  const [ticker, setTicker] = useState("APPL");
+
     return (
       <div className="chartContainer">
+
+
+        
+        <Button onClick={() => {getStockData({ticker},"2022-03-04","2022-03-04",1)}}>YO</Button>
+        <input value={ticker}   name="Ticker" onChange={e => setTicker(e.target.value)} />
 <Table striped bordered hover>
           <thead>
             <tr>
@@ -64,11 +73,11 @@ export default class chartPicture extends React.Component {
             </tr>
           </tbody>
         </Table>
-        <Button onClick={() => {getStockData("AAPL","2022-03-04","2022-03-04",1)}}>YO</Button>
+
+        
       </div>
     );
   }
-}
 /*
 <Table striped bordered hover>
           <thead>
