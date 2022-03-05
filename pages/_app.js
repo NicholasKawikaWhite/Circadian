@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
     const provider = await web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 411) {
+    if (chainId !== 43114) {
       alert("USE RINKEEBY NETWORK");
       throw new Error("Change network to Rinkeby");
     }

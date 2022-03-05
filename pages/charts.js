@@ -19,8 +19,8 @@ const apiKey = "VtcpqXV5Mv3g2HR2epTXgy095RwFe06v";
 const baseURL = "https://api.polygon.io/v2/aggs/ticker/"
 async function getStockData(ticker, tr1, tr2, sep) {
     var finalURL = baseURL+ticker+"/range/1/minute/"+tr1+"/"+tr2+"?adjusted=true&sort=asc&limit=120&apiKey="+apiKey;
-    a = await fetch(finalURL);
-    json = await a.json();
+    const a = await fetch(finalURL);
+    const json = await a.json();
     console.log(json);
 }
 
