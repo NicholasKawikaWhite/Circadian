@@ -21,26 +21,21 @@ export default function Home() {
 
         <p className={styles.description}>
           The Crypto Derived Stock Market
-          <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <p>
-              Provide a 24/7, unregulated, no-delay trading platform where users
+              Provide a <b>24/7</b>, <b>unregulated</b>, <b>no-delay</b> trading platform where users
               around the world can avoid the problems of online brokerages and
               gain greater accessibility to the stock market by using crypto to
               become involved with market trends.
             </p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
           <figure>
             <model-viewer
-              style={{ width: "350px", height: "550px" }}
+              style={{ width: "450px", height: "550px" }}
               loading="eager"
               auto-rotate-delay="1000"
               camera-orbit="0 80deg 0"
@@ -51,7 +46,7 @@ export default function Home() {
               environment-image="neutral"
               disable-zoom
               shadow-intensity="0.6"
-              src="../blockO.glb"
+              src="../untitled.glb"
             ></model-viewer>
           </figure>
 
@@ -78,3 +73,10 @@ export default function Home() {
     </div>
   );
 }
+/*
+
+          <a href="https://nextjs.org/learn" className={styles.card}>
+            <h2>Learn &rarr;</h2>
+            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          </a>
+          */
