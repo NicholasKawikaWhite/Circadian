@@ -139,6 +139,6 @@ const Charts = () => {
       );
 
 }
- 
+
 export default Charts;
-//      <Component {...pageProps} />
+//      <Component {...pageProps} /> 
