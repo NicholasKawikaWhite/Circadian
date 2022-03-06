@@ -11,11 +11,11 @@ import {useState, useEffect} from "react";
   };
 
 const Portfolio = () => {
-    const [percent1, setPercent1] = useState(2);
-    const [percent2, setPercent2] = useState(2);
+    const [percent1, setPercent1] = useState(11);
+    const [percent2, setPercent2] = useState(12);
     const [percent3, setPercent3] = useState(2);
-    const [percent4, setPercent4] = useState(2);
-    const [percent5, setPercent5] = useState(2);
+    const [percent4, setPercent4] = useState(3);
+    const [percent5, setPercent5] = useState(3);
 
     const data = [
         ["Stock", "% of Portfolio"],
@@ -41,7 +41,7 @@ const Portfolio = () => {
       <tr>
         <th>Active</th>
         <th>Stock</th>
-        <th>Percent of Portfolio</th>
+        <th>Weighted Average Percent of Portfolio</th>
         <th>Current Price</th>
       </tr>
     </thead>
