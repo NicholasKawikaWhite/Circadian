@@ -11,6 +11,7 @@
   "dependencies": {
     "@3rdweb/hooks": "^1.9.2",
     "@3rdweb/react": "^1.9.3",
+    "@metamask/detect-provider": "^1.2.0",
     "@polygon.io/client-js": "^5.0.1",
     "@portis/web3": "^4.0.7",
     "@uauth/js": "^1.0.0",
