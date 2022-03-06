@@ -13,18 +13,19 @@ import {useState, useEffect} from "react";
 const Portfolio = () => {
     const [percent1, setPercent1] = useState(11);
     const [percent2, setPercent2] = useState(12);
-    const [percent3, setPercent3] = useState(2);
-    const [percent4, setPercent4] = useState(3);
-    const [percent5, setPercent5] = useState(3);
+    const [percent3, setPercent3] = useState(6);
+    const [percent4, setPercent4] = useState(6);
+    const [percent5, setPercent5] = useState(6);
 
     const data = [
         ["Stock", "% of Portfolio"],
         ["Microsoft(MSFT)", 11],
         ["Apple(AAPL)", 12],
-        ["Tesla(TSLA)", 2],
-        ["Coca Cola(KO)", 3],
-        ["3M(MMM)", 3],
+        ["Tesla(TSLA)", 6],
+        ["Coca Cola(KO)", 6],
+        ["3M(MMM)", 6],
       ];
+      
     return ( 
 
 <div className="centered">
