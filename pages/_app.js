@@ -2,69 +2,44 @@ import "../styles/globals.css";
 import react from "react";
 import { Container, Card, Nav, Navbar, NavDropdown, Row, Col, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useState} from "react";
 import Image from 'react-bootstrap/Image';
 import { timeFormat } from "d3-time-format";
 import { format } from "d3-format";
 import "../styles/Chart.modules.css";
-import Web3Modal from "web3modal";
-import { useRef, useEffect, useState } from "react";
-import { providers } from "ethers";
+import detectEthereumProvider from '@metamask/detect-provider';
 
 
+async function printAccts() {
+  const provider = await detectEthereumProvider();
+
+  if (provider) {
+    // From now on, this should always be true:
+    // provider === window.ethereum
+    console.log(await provider.request({method: 'eth_requestAccounts'}));
+  } else {
+    console.log('Please install MetaMask!');
+  }
+}
 
 function MyApp({ Component, pageProps }) {
-  const [connectedWallet, setConnectedWallet] = useState(false);
-  const web3ModalRef = useRef(); // return the object with key named current
-
-  // providers and signer  =>
-  // providers is used for to get data from sc
-  // signer is used for to sign data / set the data to sc
-
-  const getSignerOrProvider = async (needSigner = false) => {
-    const provider = await web3ModalRef.current.connect();
-    const web3Provider = new providers.Web3Provider(provider);
-    const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 43114) {
-      alert("USE RINKEEBY NETWORK");
-      throw new Error("Change network to Rinkeby");
-    }
-    if (needSigner) {
-      const signer = web3Provider.getSigner();
-      return signer;
-    }
-    return provider;
-  };
-
-  const connectWallet = async () => {
-    try {
-      await getSignerOrProvider();
-      setConnectedWallet(true);
-    } catch (error) {
-      console.log(" error", error);
-    }
-  };
-
-  useEffect(() => {
-    web3ModalRef.current = new Web3Modal({
-      network: "rinkeby",
-      providerOptions: {},
-    });
-  }, []);
+  const [buttonName, setButtonName] = useState("Connect Wallet");
   return (
+    
     <div className="main">
+
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand href="/">
             <Navbar.Brand href="">
-            <Image src="./tester.png" width="100" height="64" className="" alt="Circadian Logo"/>
+            <Image src="./logo.png" width="35" height="42" className="" alt="Circadian Logo"/>
             </Navbar.Brand>
             Circadian
             </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/charts">Charts</Nav.Link>
+              <Nav.Link href="/charts">Derivatives Charts</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
@@ -83,7 +58,7 @@ function MyApp({ Component, pageProps }) {
           <Nav>
             <Nav.Link>
               <Button text="Connect To Wallet"
-        onClick={connectWallet}>{"Connect Wallet"}</Button>
+       onClick={() => printAccts()}>{buttonName}</Button>
             </Nav.Link>
           </Nav>
         </Container>

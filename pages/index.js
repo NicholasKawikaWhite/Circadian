@@ -3,7 +3,9 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
 
+
 export default function Home() {
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -23,11 +25,12 @@ export default function Home() {
             <h1 className={styles.description}>
               The Crypto Derived Stock Market
             </h1>
+            
             <p>
-              Provide a <b>24/7</b>, <b>unregulated</b>, <b>no-delay</b> trading
-              platform where users around the world can avoid the problems of
-              online brokerages and gain greater accessibility to the stock
-              market by using crypto to become involved with market trends.
+              Provide a <b>24/7</b>, <b>unregulated</b>, <b>no-delay</b> trading 
+              platform where users around the world can avoid the problems of 
+              online brokerages and gain greater accessibility to IPOs and 
+              customizable ETFs by using crypto.
             </p>
           </a>
 
@@ -47,6 +50,7 @@ export default function Home() {
               src="../untitled.glb"
             ></model-viewer>
           </figure>
+          
         </div>
       </main>
 
