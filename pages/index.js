@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
-
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 export default function Home() {
   
@@ -20,19 +20,27 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.grid}>
-          <a href="" className={styles.card}>
+          <div href="" className={styles.card}>
             <h1 className={styles.title}>Welcome to Circadian</h1>
             <h1 className={styles.description}>
               The Crypto Derived Stock Market
             </h1>
-            
+            <InputGroup className="mb-3 textBox">
+    <InputGroup.Text id="inputGroup-sizing-default">Sign Up for Our Mailing List</InputGroup.Text>
+    <FormControl
+      aria-label="Default"
+      aria-describedby="inputGroup-sizing-default"
+    />
+    <Button>Sign Up</Button>
+  </InputGroup>
             <p>
               Provide a <b>24/7</b>, <b>unregulated</b>, <b>no-delay</b> trading 
               platform where users around the world can avoid the problems of 
               online brokerages and gain greater accessibility to IPOs and 
               customizable ETFs by using crypto.
             </p>
-          </a>
+ 
+          </div>
 
           <figure>
             <model-viewer
