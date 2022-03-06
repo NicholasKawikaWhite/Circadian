@@ -20,7 +20,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <a href="" className={styles.card}>
             <h1 className={styles.title}>Welcome to Circadian</h1>
             <h1 className={styles.description}>
               The Crypto Derived Stock Market
@@ -54,11 +54,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a href="/" target="_blank" rel="noopener noreferrer">
-          Powered by Circadian Systems
-        </a>
-      </footer>
+    
     </div>
   );
 }

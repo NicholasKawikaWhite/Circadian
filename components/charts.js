@@ -10,6 +10,8 @@ import {
   Col,
   Button,
   Table,
+  FormControl,
+  InputGroup,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { timeParse } from "d3-time-format";
@@ -20,8 +22,67 @@ import { ChartCanvas, Chart } from "react-stockcharts";
 import { AreaSeries } from "react-stockcharts/lib/series";
 import { XAxis, YAxis } from "react-stockcharts/lib/axes";
 import { fitWidth } from "react-stockcharts/lib/helper";
-import { createVerticalLinearGradient, hexToRGBA } from "react-stockcharts/lib/utils";
+import {
+  createVerticalLinearGradient,
+  hexToRGBA,
+} from "react-stockcharts/lib/utils";
 
+export default class chartPicture extends React.Component() {
+  const [ticker, setTicker] = useState("AAPL");
+  const [actualData, setData] = useState();
+render(){
+  return (
+    <div className="chartContainer">
+      <InputGroup className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default">
+          Ticker Symbol
+        </InputGroup.Text>
+        <FormControl
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+        />
+      </InputGroup>
+      <input
+        value={ticker}
+        name="Ticker"
+        onChange={(e) => setTicker(e.target.value)}
+      />
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>{"#"}</th>
+            <th>{"High"}</th>
+            <th>{"Low"}</th>
+            <th>{"Day Change"}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{"Ticker Symbol"}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>{"Ticker Symbol"}</td>
+            <td></td>
+            <td></td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>{"Ticker Symbol"}</td>
+            <td colSpan={2}>Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </Table>
+    </div>
+  );
+}
+
+
+
+/*
 import { restClient } from "@polygon.io/client-js";
 const apiKey = "VtcpqXV5Mv3g2HR2epTXgy095RwFe06v";
 const baseURL = "https://api.polygon.io/v2/aggs/ticker/"
@@ -71,79 +132,7 @@ function TickerChart({data2, ticker}) {
     const data = await getStockData({ticker},"2022-03-04","2022-03-04",1);
     return data;
   }
-export default function chartPicture(){
-const [ticker, setTicker] = useState("AAPL");
-const [actualData, setData] = useState();
-    return (
-      <div className="chartContainer">  
 
-        <Button onClick={() => {setData(getData(ticker))}}>YO</Button>
+          <Button onClick={() => {setData(getData(ticker))}}>YO</Button>
         <Button onClick={() => {console.log(actualData)}}>YOop</Button>
-
-        <input value={ticker}   name="Ticker" onChange={e => setTicker(e.target.value)} />
-        <TickerChart data={actualData} ticker={ticker}></TickerChart>
-<Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>{"#"}</th>
-              <th>{"High"}</th>
-              <th>{"Low"}</th>
-              <th>{"Day Change"}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{"Ticker Symbol"}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>{"Ticker Symbol"}</td>
-              <td></td>
-              <td></td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>{"Ticker Symbol"}</td>
-              <td colSpan={2}>Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </Table>
-
-        
-      </div>
-    );
-  }
-/*
-<Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>{"#"}</th>
-              <th>{"High"}</th>
-              <th>{"Low"}</th>
-              <th>{"Day Change"}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{"Ticker Symbol"}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>{"Ticker Symbol"}</td>
-              <td></td>
-              <td></td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>{"Ticker Symbol"}</td>
-              <td colSpan={2}>Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </Table>
-*/
+  */

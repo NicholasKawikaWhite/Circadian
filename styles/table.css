@@ -1,0 +1,31 @@
+.inputTable{
+    display: float;
+    margin: 30px;
+  }
+
+.buySell{
+    text-align: center;
+    justify-content: center;
+
+}
+
+.greenButton,
+.greenButton:hover{
+background-color: green;
+border-color: green;
+box-shadow:rgba(red, green, blue, alpha);
+width: 150px;
+
+}
+
+
+.redButton:hover,
+.redButton{
+background-color: red;
+border-color: red;
+width: 150px;
+}
+
+.marginRight{
+    margin-block-end: 30px;
+}
