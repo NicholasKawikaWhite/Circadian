@@ -28,26 +28,10 @@ import {
 } from "react-stockcharts/lib/utils";
 
 export default class chartPicture extends React.Component() {
-  const [ticker, setTicker] = useState("AAPL");
-  const [actualData, setData] = useState();
 render(){
   return (
     <div className="chartContainer">
-      <InputGroup className="mb-3">
-        <InputGroup.Text id="inputGroup-sizing-default">
-          Ticker Symbol
-        </InputGroup.Text>
-        <FormControl
-          aria-label="Default"
-          aria-describedby="inputGroup-sizing-default"
-        />
-      </InputGroup>
-      <input
-        value={ticker}
-        name="Ticker"
-        onChange={(e) => setTicker(e.target.value)}
-      />
-      <Table striped bordered hover>
+      <Table >
         <thead>
           <tr>
             <th>{"#"}</th>
