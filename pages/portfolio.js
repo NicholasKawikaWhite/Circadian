@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Portfolio = () => {
     return ( 
 
-<div className="pt-1 px-6 mx-auto flex flex-col backGround">
+<div className="">
 
 
     </div>

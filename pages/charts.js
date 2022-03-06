@@ -22,7 +22,7 @@ import { XAxis, YAxis } from "react-stockcharts/lib/axes";
 import { fitWidth } from "react-stockcharts/lib/helper";
 import { createVerticalLinearGradient, hexToRGBA } from "react-stockcharts/lib/utils";
 
-//import { restClient } from "@polygon.io/client-js";
+import { restClient } from "@polygon.io/client-js";
 const apiKey = "VtcpqXV5Mv3g2HR2epTXgy095RwFe06v";
 const baseURL = "https://api.polygon.io/v2/aggs/ticker/"
 async function getStockData(ticker, tr1, tr2, sep) {
@@ -42,12 +42,14 @@ async function getStockData(ticker, tr1, tr2, sep) {
     return(finalData);
 }
 
-function TickerChart({data, ticker}) {
+function TickerChart({data2, ticker}) {
+  const cRatio = 10;
       <div>
       <ChartCanvas width={400} height={400}
         margin={{ left: 50, right: 50, top:10, bottom: 30 }}
         seriesName={ticker}
-        data={data} type="svg"
+        data={data2} type="svg"
+        ratio={cRatio}
         xAccessor={d => d.date} xScale={scaleTime()}
         xExtents={[new Date(2022, 3, 3), new Date(2022, 3, 3)]}>
     <Chart id={0} yExtents={d => d.close}>
@@ -71,11 +73,11 @@ function TickerChart({data, ticker}) {
   }
 export default function chartPicture(){
 const [ticker, setTicker] = useState("AAPL");
-var actualData = null;
+const [actualData, setData] = useState();
     return (
       <div className="chartContainer">  
 
-        <Button onClick={() => {actualData = getData(ticker)}}>YO</Button>
+        <Button onClick={() => {setData(getData(ticker))}}>YO</Button>
         <Button onClick={() => {console.log(actualData)}}>YOop</Button>
 
         <input value={ticker}   name="Ticker" onChange={e => setTicker(e.target.value)} />
